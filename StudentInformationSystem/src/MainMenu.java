@@ -2,11 +2,10 @@ import java.util.Scanner;
 
 public class MainMenu
 	{
-	static String option1;
+	static String option1, addOrDelete, change;
 	public static void main(String[] args)
 		{
 		Firstquestion();
-		Secondquestion();
 		Thirdquestion();
 
 		}
@@ -18,14 +17,16 @@ public class MainMenu
 		option1 = userInput1.nextLine();
 		if(option1.equals("1"))
 			{
-			
+			System.out.println("Would you prefer to: \n 1) Add a student \n 2) Delete a student");
+			Scanner userInput2 = new Scanner(System.in);
+			addOrDelete = userInput2.nextLine();
 			}
-		}
-
-	public static void Secondquestion()
-		{
-		System.out.println("Would you prefer to \n 1) Add a student \n 2) Delete a student");
-		
+		if(option1.equals("2"))
+			{
+			System.out.println("Would you prefer to: \n 1) Change a student's schedule \n 2) Change a student's grade");
+			Scanner userInput3 = new Scanner(System.in);
+			change = userInput1.nextLine();
+			}
 		}
 
 	public static void Thirdquestion()
