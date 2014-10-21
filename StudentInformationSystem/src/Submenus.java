@@ -6,6 +6,8 @@ public class Submenus
 	
 	static ArrayList <Student> roster = new ArrayList<Student>();
 	static int addOrDelete;
+	static String firstName,  lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade;
+	
 	
 	public static void runSubmenus()
 		{
@@ -39,7 +41,30 @@ public class Submenus
 		}
 	public static void addStudent()
 		{
+		System.out.println("First name :");
+		Scanner userInput = new Scanner (System.in);
+		firstName = userInput.nextLine();
 		
+		System.out.println("Last name :");
+		lastName = userInput.nextLine();
+		
+		System.out.println("First period class :");
+		firstPeriod = userInput.nextLine();
+		
+		System.out.println("First period grade :");
+		firstPeriodGrade = userInput.nextLine();
+		
+		System.out.println("Second period class :");
+		secondPeriod = userInput.nextLine();
+		
+		System.out.println("Second period grade :");
+		secondPeriodGrade = userInput.nextLine();
+		
+		System.out.println("Third period class :");
+		thirdPeriod = userInput.nextLine();
+		
+		System.out.println("Third period grade :");
+		thirdPeriodGrade = userInput.nextLine();
 		}
 	public static void deleteStudent()
 		{
