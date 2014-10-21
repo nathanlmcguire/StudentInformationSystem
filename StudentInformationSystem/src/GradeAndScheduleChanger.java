@@ -79,7 +79,7 @@ public class GradeAndScheduleChanger
 		System.out.println("What do you want to change the grade to?");
 		}
 	
-	public static void alterSchedule()
+	public static void alterSchedule()//most difficult method
 		{
 		
 		}
