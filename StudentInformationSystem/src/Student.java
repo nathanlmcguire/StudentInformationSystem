@@ -1,8 +1,6 @@
 public class Student
 	{
-/*
- * these variables are just a start, need to add more.
- */
+
 	private String firstName;
 	private String lastName;
 	private String periodOne;
@@ -24,6 +22,9 @@ public class Student
 		periodThreeGrade = p3g;
 		}
 
+	/*
+	 * Not sure if all of these setters are needed in Nathans class.
+	 */
 	public String getFirstName()
 		{
 		return firstName;
@@ -88,15 +89,7 @@ public class Student
 		{
 		this.periodThreeGrade = periodThreeGrade;
 		}
+	
+	
+	
 	}
-
-
-/*
- * create a constructor
- * create an ArrayList and fill it with the students from the text file.
- * 	
- * Submenus : 
- * make a method that adds a student to the ArrayList
- * make a method that deletes the student from the ArrayList
- */
- 

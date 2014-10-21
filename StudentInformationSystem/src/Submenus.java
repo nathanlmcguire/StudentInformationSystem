@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Submenus
 	{
-	
+	/*
+	 * ArrayList that is to be filled with all of the students.
+	 */
 	static ArrayList <Student> roster = new ArrayList<Student>();
 	static int addOrDelete;
 	static String firstName,  lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade;
@@ -30,6 +32,9 @@ public class Submenus
 				}
 			}
 		}
+	/*
+	 * This method will add the students from the .txt file to the roster ArrayList.
+	 */
 	public static void addToRoster() throws FileNotFoundException
 		{
 		Scanner file = new Scanner (new File ("studentlist.txt"));
@@ -39,6 +44,9 @@ public class Submenus
 			roster.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next()));
 			}
 		}
+	/*
+	 * This method will allow the user to manually enter a student into the roster.
+	 */
 	public static void addStudent()
 		{
 		System.out.println("First name :");
@@ -66,9 +74,11 @@ public class Submenus
 		System.out.println("Third period grade :");
 		thirdPeriodGrade = userInput.nextLine();
 		}
+	/*
+	 * This method will delete all the information of a chosen student.
+	 */
 	public static void deleteStudent()
 		{
 		
 		}
-	
 	}
