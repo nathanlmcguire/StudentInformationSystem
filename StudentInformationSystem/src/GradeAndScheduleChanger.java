@@ -5,7 +5,7 @@ public class GradeAndScheduleChanger
 	static String newGrade;
 	static int sureChoice;
 	
-	public static void changeGrade()
+	public static void changeGrade()//Done
 		{
 		sureChoice = 0;
 		while(sureChoice != 1)
@@ -16,14 +16,13 @@ public class GradeAndScheduleChanger
 			}
 		sureChoice = 0;
 		while(sureChoice != 1)
-			{
-			System.out.println("What do you want to change the grade to?");
-			//sets grade to newGrade
+			{			
+			alterGrade();
 			askIfSure();
 			}
 		}
 	
-	public static void changeSchedule()
+	public static void changeSchedule()//Done
 		{
 		sureChoice = 0;
 		while(sureChoice != 1)
@@ -34,18 +33,17 @@ public class GradeAndScheduleChanger
 			}
 		sureChoice = 0;
 		while(sureChoice != 1)
-			{
-			System.out.println("What do you want to change the grade to?");
-			
+			{			
+			alterSchedule();
 			askIfSure();
 			}
 		}
 	
 	public static void chooseStudent()
 		{
-		for(ArrayList s : Submenus.Roster)
+		for(Student s : Submenus.roster)
 			{
-			
+			System.out.println(s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
 			}
 		}	
 	
@@ -76,4 +74,13 @@ public class GradeAndScheduleChanger
 		
 		}
 		
+	public static void alterGrade()
+		{
+		System.out.println("What do you want to change the grade to?");
+		}
+	
+	public static void alterSchedule()
+		{
+		
+		}
 	}
