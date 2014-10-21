@@ -11,7 +11,7 @@ public class Student
 	private String periodTwoGrade;
 	private String periodThree;
 	private String periodThreeGrade;
-	
+	private String test;
 	
 	public Student (String fn, String ln, String p1, String p1g, String p2, String p2g, String p3, String p3g)
 		{
