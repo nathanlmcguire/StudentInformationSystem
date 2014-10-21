@@ -39,7 +39,7 @@ public class GradeAndScheduleChanger
 			}
 		}
 	
-	public static void chooseStudent()
+	public static void chooseStudent()//done
 		{
 		for(Student s : Submenus.roster)
 			{
