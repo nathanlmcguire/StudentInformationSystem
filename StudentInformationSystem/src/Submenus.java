@@ -76,9 +76,11 @@ public class Submenus
 		}
 	/*
 	 * This method will delete all the information of a chosen student.
+	 * It will print the entire roster and give each student a number
+	 * the number the user inputs will be the student that is deleted.
 	 */
 	public static void deleteStudent()
 		{
-		
+		 
 		}
 	}
