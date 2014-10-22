@@ -1,6 +1,7 @@
 public class Student
 	{
 
+	private int 
 	private String firstName;
 	private String lastName;
 	private String periodOne;
