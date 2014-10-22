@@ -5,7 +5,4 @@ public abstract class SortByLastName implements Comparator<Student>
 			{
 			return s2.getLastName().compareTo(s1.getLastName());
 			}
-
-
-		}
-
+	}

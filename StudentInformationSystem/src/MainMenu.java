@@ -7,7 +7,6 @@ public class MainMenu
 	public static void main(String[] args)
 		{
 		Firstquestion();
-		Thirdquestion();
 		}
 
 	public static void Firstquestion()
@@ -40,7 +39,7 @@ public class MainMenu
 			sort = userInput1.nextLine();
 			if(sort.equals("1"))
 			{
-		//	SortByLastName.compare();
+				Collections.sort(Submenus.roster, new SortByLastName());
 			}
 			if(sort.equals("2"))
 			{
@@ -51,12 +50,6 @@ public class MainMenu
 				//SortByClass
 			}
 		}
-		}
-
-	public static void Thirdquestion()
-		{
-		System.out.println("");
-		
 		}
 
 	}
