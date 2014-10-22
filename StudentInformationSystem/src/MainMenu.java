@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class MainMenu
@@ -7,7 +8,6 @@ public class MainMenu
 		{
 		Firstquestion();
 		Thirdquestion();
-
 		}
 
 	public static void Firstquestion()
@@ -17,18 +17,8 @@ public class MainMenu
 		option1 = userInput1.nextLine();
 		if(option1.equals("1"))
 			{
-			System.out.println("Would you prefer to: \n 1) Add a student \n 2) Delete a student");
-			Scanner userInput2 = new Scanner(System.in);
-			addOrDelete = userInput2.nextLine();
-			if(addOrDelete.equals("1"))
-			{
-				//Chris' method to add a student
-			}
-			if(addOrDelete.equals("2"))
-			{
-				//Chris' method to delete a student
-			}
-			}
+				Submenus.runSubmenus();
+			}			
 		if(option1.equals("2"))
 			{
 			System.out.println("Would you prefer to: \n 1) Change a student's schedule \n 2) Change a student's grade");
@@ -40,7 +30,7 @@ public class MainMenu
 			}
 			if(change.equals(2))
 			{
-				//Nathan's method to change a students grade
+				GradeAndScheduleChanger.changeGrade();
 			}
 			}
 		if(option1.equals("3"))
@@ -50,7 +40,7 @@ public class MainMenu
 			sort = userInput1.nextLine();
 			if(sort.equals("1"))
 			{
-				//SortByLastName
+		//	SortByLastName.compare();
 			}
 			if(sort.equals("2"))
 			{

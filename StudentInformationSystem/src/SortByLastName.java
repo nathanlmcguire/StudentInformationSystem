@@ -9,4 +9,3 @@ public abstract class SortByLastName implements Comparator<Student>
 
 		}
 
-	}
