@@ -1,5 +1,5 @@
 import java.util.Comparator;
-public abstract class SortByLastName implements Comparator<Student>
+public class SortByLastName implements Comparator<Student>
 	{
 		public int compare(Student s1, Student s2)
 			{

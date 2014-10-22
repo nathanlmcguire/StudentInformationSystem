@@ -6,6 +6,7 @@ public class MainMenu
 	static String option1, addOrDelete, change, sort;
 	public static void main(String[] args)
 		{
+		Submenus.addToRoster();
 		Firstquestion();
 		}
 
@@ -40,14 +41,15 @@ public class MainMenu
 			if(sort.equals("1"))
 			{
 				Collections.sort(Submenus.roster, new SortByLastName());
+				System.out.println(Submenus.roster);
 			}
 			if(sort.equals("2"))
 			{
-				//SortByGPA
+				//Collections.sort(Submenus.roster, new SortByGPA());
 			}
 			if(sort.equals("3"))
 			{
-				//SortByClass
+				//Collections.sort(Submenus.roster, new SortByClass());
 			}
 		}
 		}
