@@ -17,10 +17,10 @@ public class Submenus
 		{
 		addToRoster();
 		
-		System.out.println("Would you like to :\n");
-		System.out.println("1) Add a student\n");
-		System.out.println("2) Remove a student\n");
-		System.out.println("3) Return to main menu\n");
+		System.out.println("Would you like to :");
+		System.out.println("1) Add a student");
+		System.out.println("2) Remove a student");
+		System.out.println("3) Return to main menu");
 		
 		Scanner userInput = new Scanner(System.in);
 		addOrDelete = userInput.nextInt();
@@ -59,7 +59,7 @@ public class Submenus
 	/*
 	 * This method will allow the user to manually enter a student into the roster.
 	 */
-	public static void addStudent()
+	public static void addStudent() throws FileNotFoundException
 		{
 		System.out.println("First name :");
 		Scanner userInput = new Scanner (System.in);
@@ -90,11 +90,14 @@ public class Submenus
 		
 		System.out.println("Here is the new class roster :");
 		
+		studentNumber = 0;
 		for(Student s : Submenus.roster)
 			{
-			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "|  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "|  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "|");			
+			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
 			studentNumber++;
 			}
+		
+		
 		}
 	
 	
@@ -103,29 +106,42 @@ public class Submenus
 	 * It will print the entire roster and give each student a number
 	 * the number the user inputs will be the student that is deleted.
 	 */
-	public static void deleteStudent()
+	public static void deleteStudent() throws FileNotFoundException
 		{
-		
+		studentNumber = 0;
 		for(Student s : Submenus.roster)
 			{
-			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "|  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "|  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "|");			
+			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
 			studentNumber++;
 			}
 		
 		Scanner userInput = new Scanner(System.in);
 		studentToDelete = userInput.nextInt();
 		
+		
 		System.out.println("Are you sure you would like to delete " + roster.get(studentToDelete - 1).getFirstName());
-		System.out.println("\n1) Yes");
-		System.out.println("\n2) No ");
+		System.out.println("1) Yes");
+		System.out.println("2) No ");
+		
+		Scanner userInput2 = new Scanner (System.in);
+		confirmDelete = userInput2.nextInt();
 		
 		
 		switch(confirmDelete)
 			{
 			case 1:
 				{
-				roster.remove(studentToDelete);
-				System.out.println("\nThe student was successfully deleted");
+				roster.remove(studentToDelete - 1);
+				System.out.println("\nThe student was successfully deleted, here is the new roster : ");
+				
+				studentNumber = 0;
+				for(Student s : Submenus.roster)
+					{
+					System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
+					studentNumber++;
+					}
+				
+				MainMenu.Firstquestion();
 				break;
 				}
 			case 2:
