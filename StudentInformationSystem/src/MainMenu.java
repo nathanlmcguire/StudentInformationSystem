@@ -1,16 +1,17 @@
+import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class MainMenu
 	{
 	static String option1, addOrDelete, change, sort;
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 		{
 		Submenus.addToRoster();
 		Firstquestion();
 		}
 
-	public static void Firstquestion()
+	public static void Firstquestion() throws FileNotFoundException
 		{
 		System.out.println("What would you like to do? \n 1) Add or delete a student \n 2) Change a Student's grades or schedule \n 3) Sort students" );
 		Scanner userInput1 = new Scanner(System.in);
@@ -26,7 +27,7 @@ public class MainMenu
 			change = userInput1.nextLine();
 			if(change.equals(1))
 			{
-				//Nathan's method to change a students schedule
+			GradeAndScheduleChanger.changeSchedule();
 			}
 			if(change.equals(2))
 			{
@@ -43,14 +44,18 @@ public class MainMenu
 				Collections.sort(Submenus.roster, new SortByLastName());
 				System.out.println(Submenus.roster);
 			}
-			if(sort.equals("2"))
+			else if(sort.equals("2"))
 			{
 				//Collections.sort(Submenus.roster, new SortByGPA());
 			}
-			if(sort.equals("3"))
+			else if(sort.equals("3"))
 			{
 				//Collections.sort(Submenus.roster, new SortByClass());
 			}
+			else
+				{
+				
+				}
 		}
 		}
 
