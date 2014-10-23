@@ -7,8 +7,11 @@ public class MainMenu
 	static String option1, addOrDelete, change, sort;
 	public static void main(String[] args) throws FileNotFoundException
 		{
+		while(true)
+			{
 		Submenus.addToRoster();
 		Firstquestion();
+			}
 		}
 
 	public static void Firstquestion() throws FileNotFoundException
@@ -50,7 +53,8 @@ public class MainMenu
 			}
 			else if(sort.equals("3"))
 			{
-				//Collections.sort(Submenus.roster, new SortByClass());
+				Collections.sort(Submenus.roster, new SortByClass());
+				
 			}
 			else
 				{
