@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GradeAndScheduleChanger
 	{
-	static String newGrade;
+	static String newGrade, savedPeriod;
 	static int sureChoice, studentNumber, gradeChoice, studentChoice, replaceChoice, replaceWithChoice;
 	
 	public static void changeGrade()//Done
@@ -111,7 +111,7 @@ public class GradeAndScheduleChanger
 				break;
 				}				
 			}
-		System.out.println("ID:" + studentNumber + ": " + Submenus.roster.get(studentNumber - 1).getFirstName() + " " + Submenus.roster.get(studentNumber - 1).getLastName() + ">>> " + Submenus.roster.get(studentNumber - 1).getPeriodOne() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodOneGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodTwo() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodTwoGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodThree() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodThreeGrade() + "|");
+		System.out.println("ID:" + studentNumber + " " + Submenus.roster.get(studentNumber - 1).getFirstName() + " " + Submenus.roster.get(studentNumber - 1).getLastName() + ">>> " + Submenus.roster.get(studentNumber - 1).getPeriodOne() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodOneGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodTwo() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodTwoGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodThree() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodThreeGrade() + "|");
 		}
 	
 	public static void alterSchedule()
@@ -138,14 +138,16 @@ public class GradeAndScheduleChanger
 					{
 					case 2:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodOne();
 						Submenus.roster.get(studentNumber - 1).setPeriodOne(Submenus.roster.get(studentNumber - 1).getPeriodTwo());
-						Submenus.roster.get(studentNumber - 1).setPeriodTwo(Submenus.roster.get(studentNumber - 1).getPeriodOne());
+						Submenus.roster.get(studentNumber - 1).setPeriodTwo(savedPeriod);
 						break;
 						}
 					case 3:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodOne();
 						Submenus.roster.get(studentNumber - 1).setPeriodOne(Submenus.roster.get(studentNumber - 1).getPeriodThree());
-						Submenus.roster.get(studentNumber - 1).setPeriodThree(Submenus.roster.get(studentNumber - 1).getPeriodOne());
+						Submenus.roster.get(studentNumber - 1).setPeriodThree(savedPeriod);
 						break;
 						}
 					}
@@ -157,14 +159,16 @@ public class GradeAndScheduleChanger
 					{
 					case 1:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodTwo();
 						Submenus.roster.get(studentNumber - 1).setPeriodTwo(Submenus.roster.get(studentNumber - 1).getPeriodOne());
-						Submenus.roster.get(studentNumber - 1).setPeriodOne(Submenus.roster.get(studentNumber - 1).getPeriodTwo());
+						Submenus.roster.get(studentNumber - 1).setPeriodOne(savedPeriod);
 						break;
 						}
 					case 3:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodTwo();
 						Submenus.roster.get(studentNumber - 1).setPeriodTwo(Submenus.roster.get(studentNumber - 1).getPeriodThree());
-						Submenus.roster.get(studentNumber - 1).setPeriodThree(Submenus.roster.get(studentNumber - 1).getPeriodTwo());
+						Submenus.roster.get(studentNumber - 1).setPeriodThree(savedPeriod);
 						break;
 						}
 					}
@@ -176,20 +180,22 @@ public class GradeAndScheduleChanger
 					{
 					case 1:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodThree();
 						Submenus.roster.get(studentNumber - 1).setPeriodThree(Submenus.roster.get(studentNumber - 1).getPeriodTwo());
-						Submenus.roster.get(studentNumber - 1).setPeriodTwo(Submenus.roster.get(studentNumber - 1).getPeriodThree());
+						Submenus.roster.get(studentNumber - 1).setPeriodTwo(savedPeriod);
 						break;
 						}
 					case 2:
 						{
+						savedPeriod = Submenus.roster.get(studentNumber - 1).getPeriodThree();
 						Submenus.roster.get(studentNumber - 1).setPeriodThree(Submenus.roster.get(studentNumber - 1).getPeriodTwo());
-						Submenus.roster.get(studentNumber - 1).setPeriodTwo(Submenus.roster.get(studentNumber - 1).getPeriodThree());
+						Submenus.roster.get(studentNumber - 1).setPeriodTwo(savedPeriod);
 						break;
 						}					
 					}
 				break;
 				}
 			}
-		System.out.println("ID:" + studentNumber + ": " + Submenus.roster.get(studentNumber - 1).getFirstName() + " " + Submenus.roster.get(studentNumber - 1).getLastName() + ">>> " + Submenus.roster.get(studentNumber - 1).getPeriodOne() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodOneGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodTwo() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodTwoGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodThree() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodThreeGrade() + "|");
+		System.out.println("ID:" + studentNumber + " " + Submenus.roster.get(studentNumber - 1).getFirstName() + " " + Submenus.roster.get(studentNumber - 1).getLastName() + ">>> " + Submenus.roster.get(studentNumber - 1).getPeriodOne() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodOneGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodTwo() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodTwoGrade() + "| " + Submenus.roster.get(studentNumber - 1).getPeriodThree() + ": " + Submenus.roster.get(studentNumber - 1).getPeriodThreeGrade() + "|");
 		}
 	}
