@@ -51,7 +51,7 @@ public class Submenus
 		{
 		Scanner file = new Scanner (new File ("studentlist.txt"));
 		
-		while(file.hasNextLine())
+		while(file.hasNext())
 			{
 			roster.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next()));
 			}
@@ -92,7 +92,7 @@ public class Submenus
 		
 		for(Student s : Submenus.roster)
 			{
-			System.out.println(studentNumber + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "|  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "|  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "|");			
 			studentNumber++;
 			}
 		}
@@ -108,7 +108,7 @@ public class Submenus
 		
 		for(Student s : Submenus.roster)
 			{
-			System.out.println(studentNumber + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "|  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "|  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "|");			
 			studentNumber++;
 			}
 		
