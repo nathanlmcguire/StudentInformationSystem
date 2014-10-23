@@ -13,21 +13,23 @@ public class Submenus
 	static String firstName,  lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade;
 	
 	
-	public static void runSubmenus()
+	public static void runSubmenus() throws FileNotFoundException
 		{
-		System.out.println("Would you like to :");
-		System.out.println("1) Add a student");
-		System.out.println("2) Remove a student");
-		System.out.println("3) Return to main menu");
+		addToRoster();
+		
+		System.out.println("Would you like to :\n");
+		System.out.println("1) Add a student\n");
+		System.out.println("2) Remove a student\n");
+		System.out.println("3) Return to main menu\n");
 		
 		Scanner userInput = new Scanner(System.in);
 		addOrDelete = userInput.nextInt();
 		
 		switch(addOrDelete)
 			{
-			case 1:
+			case 3:
 				{
-				addStudent();
+				MainMenu.Firstquestion();
 				break;
 				}
 			case 2:
@@ -35,9 +37,10 @@ public class Submenus
 				deleteStudent();
 				break;
 				}
-			case 3:
+			case 1:
 				{
-				MainMenu.Firstquestion();
+				addStudent();
+				break;
 				}
 			}
 		}
@@ -82,7 +85,19 @@ public class Submenus
 		
 		System.out.println("Third period grade :");
 		thirdPeriodGrade = userInput.nextLine();
+		
+		roster.add(new Student(firstName, lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade));
+		
+		System.out.println("Here is the new class roster :");
+		
+		for(Student s : Submenus.roster)
+			{
+			System.out.println(studentNumber + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+			studentNumber++;
+			}
 		}
+	
+	
 	/*
 	 * This method will delete all the information of a chosen student.
 	 * It will print the entire roster and give each student a number
@@ -101,8 +116,8 @@ public class Submenus
 		studentToDelete = userInput.nextInt();
 		
 		System.out.println("Are you sure you would like to delete " + roster.get(studentToDelete - 1).getFirstName());
-		System.out.println("1) Yes");
-		System.out.println("2) No ");
+		System.out.println("\n1) Yes");
+		System.out.println("\n2) No ");
 		
 		
 		switch(confirmDelete)
@@ -110,12 +125,12 @@ public class Submenus
 			case 1:
 				{
 				roster.remove(studentToDelete);
-				System.out.println("The student was successfully deleted");
+				System.out.println("\nThe student was successfully deleted");
 				break;
 				}
 			case 2:
 				{
-				runSubmenus();
+				deleteStudent();
 				break;
 				}
 			}
