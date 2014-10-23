@@ -23,13 +23,13 @@ public class MainMenu
 		if(option1.equals("2"))
 			{
 			System.out.println("Would you prefer to: \n 1) Change a student's schedule \n 2) Change a student's grade");
-			Scanner userInput3 = new Scanner(System.in);
-			change = userInput1.nextLine();
-			if(change.equals(1))
+			Scanner userInput2 = new Scanner(System.in);
+			change = userInput2.nextLine();
+			if(change.equals("1"))
 			{
-			GradeAndScheduleChanger.changeSchedule();
+				GradeAndScheduleChanger.changeSchedule();
 			}
-			if(change.equals(2))
+			if(change.equals("2"))
 			{
 				GradeAndScheduleChanger.changeGrade();
 			}
@@ -38,7 +38,7 @@ public class MainMenu
 		{
 			System.out.println("Would you prefer to sort the students by: \n 1) Last Name \n 2) GPA \n 3) Class");
 			Scanner userInput3 = new Scanner(System.in);
-			sort = userInput1.nextLine();
+			sort = userInput3.nextLine();
 			if(sort.equals("1"))
 			{
 				Collections.sort(Submenus.roster, new SortByLastName());
