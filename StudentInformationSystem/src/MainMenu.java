@@ -69,7 +69,7 @@ public class MainMenu
 			GradeAndScheduleChanger.studentNumber = 1;
 			for(Student s : Submenus.roster)
 				{
-				System.out.println("ID:" + GradeAndScheduleChanger.studentNumber + ": " + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+				System.out.println("ID:" + GradeAndScheduleChanger.studentNumber + ": " + s.getFirstName() + " " + s.getLastName() + "  " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
 				GradeAndScheduleChanger.studentNumber++;
 			}
 		}
