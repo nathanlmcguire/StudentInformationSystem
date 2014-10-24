@@ -9,8 +9,9 @@ public class Student
 	private String periodTwoGrade;
 	private String periodThree;
 	private String periodThreeGrade;
+	private Double gpa;
 	
-	public Student (String fn, String ln, String p1, String p1g, String p2, String p2g, String p3, String p3g)
+	public Student (String fn, String ln, String p1, String p1g, String p2, String p2g, String p3, String p3g, Double g)
 		{
 		firstName = fn;
 		lastName = ln;
@@ -20,7 +21,10 @@ public class Student
 		periodTwoGrade =p2g; 
 		periodThree = p3;
 		periodThreeGrade = p3g;
+		gpa = g;
 		}
+
+	
 
 	/*
 	 * Not sure if all of these setters are needed in Nathans class.
@@ -89,7 +93,14 @@ public class Student
 		{
 		this.periodThreeGrade = periodThreeGrade;
 		}
-	
+	public Double getGpa()
+		{
+		return gpa;
+		}
+	public void setGpa(Double gpa)
+		{
+		this.gpa = gpa;
+		}
 	
 	
 	}

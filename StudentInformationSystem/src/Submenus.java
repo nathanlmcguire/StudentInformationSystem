@@ -11,6 +11,7 @@ public class Submenus
 	static int  studentNumber = 1;
 	static int confirmDelete;
 	static String firstName,  lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade;
+	static Double gpa;
 	
 	
 	public static void runSubmenus() throws FileNotFoundException
@@ -54,7 +55,7 @@ public class Submenus
 		
 		while(file.hasNext())
 			{
-			roster.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next()));
+			roster.add(new Student(file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), file.next(), 0.0));
 			}
 		}
 	/*
@@ -87,7 +88,7 @@ public class Submenus
 		System.out.println("Third period grade :");
 		thirdPeriodGrade = userInput.nextLine();
 		
-		roster.add(new Student(firstName, lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade));
+		roster.add(new Student(firstName, lastName, firstPeriod, firstPeriodGrade, secondPeriod, secondPeriodGrade, thirdPeriod, thirdPeriodGrade,gpa));
 		
 		System.out.println("Here is the new class roster :");
 		
