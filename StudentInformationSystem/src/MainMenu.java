@@ -7,10 +7,11 @@ public class MainMenu
 	static String option1, addOrDelete, change, sort;
 	public static void main(String[] args) throws FileNotFoundException
 		{
+		Submenus.addToRoster();
 		while(true)
 			{
-		Submenus.addToRoster();
 		Firstquestion();
+		Printsorter();
 			}
 		}
 
@@ -38,32 +39,41 @@ public class MainMenu
 			}
 			}
 		if(option1.equals("3"))
-		{
-			System.out.println("Would you prefer to sort the students by: \n 1) Last Name \n 2) GPA \n 3) Class");
-			Scanner userInput3 = new Scanner(System.in);
-			sort = userInput3.nextLine();
-			if(sort.equals("1"))
 			{
-				Collections.sort(Submenus.roster, new SortByLastName());
-				System.out.println(Submenus.roster);
-			}
-			else if(sort.equals("2"))
-			{
-				//Collections.sort(Submenus.roster, new SortByGPA());
-			}
-			else if(sort.equals("3"))
-			{
-				Collections.sort(Submenus.roster, new SortByClass());
+				System.out.println("Would you prefer to sort the students by: \n 1) Last Name \n 2) GPA \n 3) Class");
+				Scanner userInput3 = new Scanner(System.in);
+				sort = userInput3.nextLine();
+				if(sort.equals("1"))
+					{
+						Collections.sort(Submenus.roster, new SortByLastName());
+						System.out.println(Submenus.roster);
+					}
+				else if(sort.equals("2"))
+					{
+						//Collections.sort(Submenus.roster, new SortByGPA());
+					}
+				else if(sort.equals("3"))
+					{
+						Collections.sort(Submenus.roster, new SortByClass());
 				
+					}
+				else
+					{
+				
+					}
 			}
-			else
+		}
+		public static void Printsorter()
+			{
+			studentNumber = 1;
+			for(Student s : Submenus.roster)
 				{
-				
-				}
+				System.out.println("ID:" + studentNumber + ": " + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+				studentNumber++;
+			}
 		}
 		}
 
-	}
 //main menus: Menu Class
 //input, methods
 
