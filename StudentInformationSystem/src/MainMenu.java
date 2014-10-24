@@ -46,16 +46,17 @@ public class MainMenu
 				if(sort.equals("1"))
 					{
 						Collections.sort(Submenus.roster, new SortByLastName());
-						System.out.println(Submenus.roster);
+						Printsorter();
 					}
 				else if(sort.equals("2"))
 					{
 						//Collections.sort(Submenus.roster, new SortByGPA());
+						Printsorter();
 					}
 				else if(sort.equals("3"))
 					{
 						Collections.sort(Submenus.roster, new SortByClass());
-				
+						Printsorter();
 					}
 				else
 					{
@@ -65,6 +66,7 @@ public class MainMenu
 		}
 		public static void Printsorter()
 			{
+			System.out.println("This is the sorted class ");
 			GradeAndScheduleChanger.studentNumber = 1;
 			for(Student s : Submenus.roster)
 				{
