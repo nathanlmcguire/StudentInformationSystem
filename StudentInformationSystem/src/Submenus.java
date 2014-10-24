@@ -15,7 +15,7 @@ public class Submenus
 	
 	public static void runSubmenus() throws FileNotFoundException
 		{
-		addToRoster();
+		
 		
 		System.out.println("Would you like to :");
 		System.out.println("1) Add a student");
@@ -27,9 +27,9 @@ public class Submenus
 		
 		switch(addOrDelete)
 			{
-			case 3:
+			case 1:
 				{
-				MainMenu.Firstquestion();
+				addStudent();
 				break;
 				}
 			case 2:
@@ -37,9 +37,10 @@ public class Submenus
 				deleteStudent();
 				break;
 				}
-			case 1:
+			case 3:
 				{
-				addStudent();
+
+				MainMenu.Firstquestion();
 				break;
 				}
 			}
@@ -90,12 +91,14 @@ public class Submenus
 		
 		System.out.println("Here is the new class roster :");
 		
-		studentNumber = 0;
+		studentNumber = 1;
 		for(Student s : Submenus.roster)
 			{
 			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
 			studentNumber++;
 			}
+		
+		
 		
 		
 		}
@@ -108,6 +111,7 @@ public class Submenus
 	 */
 	public static void deleteStudent() throws FileNotFoundException
 		{
+		
 		studentNumber = 0;
 		for(Student s : Submenus.roster)
 			{
@@ -134,7 +138,7 @@ public class Submenus
 				roster.remove(studentToDelete - 1);
 				System.out.println("\nThe student was successfully deleted, here is the new roster : ");
 				
-				studentNumber = 0;
+				studentNumber = 1;
 				for(Student s : Submenus.roster)
 					{
 					System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
@@ -153,3 +157,4 @@ public class Submenus
 		 
 		}
 	}
+	
