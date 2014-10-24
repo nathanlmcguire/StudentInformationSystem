@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class MainMenu
 	{
 	static String option1, addOrDelete, change, sort;
+	static double average, gpa, total;
+	
 	public static void main(String[] args) throws FileNotFoundException
 		{
 		Submenus.addToRoster();
@@ -49,7 +51,8 @@ public class MainMenu
 					}
 				else if(sort.equals("2"))
 					{
-						//Collections.sort(Submenus.roster, new SortByGPA());
+					findGPA();
+						Collections.sort(Submenus.roster, new SortByGPA());
 						Printsorter();
 					}
 				else if(sort.equals("3"))
@@ -73,6 +76,219 @@ public class MainMenu
 				GradeAndScheduleChanger.studentNumber++;
 			}
 		}
+		public static void findGPA()
+			{
+			for(Student s : Submenus.roster)
+				{
+				gpa = 0;
+				switch(s.getPeriodOneGrade())
+					{
+					case "A+":
+						{
+						gpa = gpa + 4.3;
+						break;
+						}
+					case "A":
+						{
+						gpa = gpa + 4;
+						break;
+						}
+					case "A-":
+						{
+						gpa = gpa + 3.7;
+						break;
+						}
+					case "B+":
+						{
+						gpa = gpa + 3.3;
+						break;
+						}
+					case "B":
+						{
+						gpa = gpa + 3;
+						break;
+						}
+					case "B-":
+						{
+						gpa = gpa + 2.7;
+						break;
+						}
+					case "C+":
+						{
+						gpa = gpa + 2.3;
+						break;
+						}
+					case "C":
+						{
+						gpa = gpa + 2;
+						break;
+						}
+					case "C-":
+						{
+						gpa = gpa + 1.7;
+						break;
+						}
+					case "D+":
+						{
+						gpa = gpa + 1.3;
+						break;
+						}
+					case "D":
+						{
+						gpa = gpa + 1;
+						break;
+						}
+					case "D-":
+						{
+						gpa = gpa + 0.7;
+						break;
+						}
+					case "F":
+						{
+						gpa = gpa + 0;
+						break;
+						}
+					}
+				switch(s.getPeriodTwoGrade())
+					{
+					case "A+":
+						{
+						gpa = gpa + 4.3;
+						break;
+						}
+					case "A":
+						{
+						gpa = gpa + 4;
+						break;
+						}
+					case "A-":
+						{
+						gpa = gpa + 3.7;
+						break;
+						}
+					case "B+":
+						{
+						gpa = gpa + 3.3;
+						break;
+						}
+					case "B":
+						{
+						gpa = gpa + 3;
+						break;
+						}
+					case "B-":
+						{
+						gpa = gpa + 2.7;
+						break;
+						}
+					case "C+":
+						{
+						gpa = gpa + 2.3;
+						break;
+						}
+					case "C":
+						{
+						gpa = gpa + 2;
+						break;
+						}
+					case "C-":
+						{
+						gpa = gpa + 1.7;
+						break;
+						}
+					case "D+":
+						{
+						gpa = gpa + 1.3;
+						break;
+						}
+					case "D":
+						{
+						gpa = gpa + 1;
+						break;
+						}
+					case "D-":
+						{
+						gpa = gpa + 0.7;
+						break;
+						}
+					case "F":
+						{
+						gpa = gpa + 0;
+						break;
+						}
+					}
+				switch(s.getPeriodThreeGrade())
+					{
+					case "A+":
+						{
+						gpa = gpa + 4.3;
+						break;
+						}
+					case "A":
+						{
+						gpa = gpa + 4;
+						break;
+						}
+					case "A-":
+						{
+						gpa = gpa + 3.7;
+						break;
+						}
+					case "B+":
+						{
+						gpa = gpa + 3.3;
+						break;
+						}
+					case "B":
+						{
+						gpa = gpa + 3;
+						break;
+						}
+					case "B-":
+						{
+						gpa = gpa + 2.7;
+						break;
+						}
+					case "C+":
+						{
+						gpa = gpa + 2.3;
+						break;
+						}
+					case "C":
+						{
+						gpa = gpa + 2;
+						break;
+						}
+					case "C-":
+						{
+						gpa = gpa + 1.7;
+						break;
+						}
+					case "D+":
+						{
+						gpa = gpa + 1.3;
+						break;
+						}
+					case "D":
+						{
+						gpa = gpa + 1;
+						break;
+						}
+					case "D-":
+						{
+						gpa = gpa + 0.7;
+						break;
+						}
+					case "F":
+						{
+						gpa = gpa + 0;
+						break;
+						}
+					}
+				average = gpa / 3;
+				s.setGradePointAverage(gpa);
+				}
+	                }
 		}
 
 //main menus: Menu Class
