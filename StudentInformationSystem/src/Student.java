@@ -9,7 +9,7 @@ public class Student
 	private String periodTwoGrade;
 	private String periodThree;
 	private String periodThreeGrade;
-	private Double gpa;
+	private Double gradePointAverage;
 	
 	public Student (String fn, String ln, String p1, String p1g, String p2, String p2g, String p3, String p3g, Double g)
 		{
@@ -21,7 +21,7 @@ public class Student
 		periodTwoGrade =p2g; 
 		periodThree = p3;
 		periodThreeGrade = p3g;
-		gpa = g;
+		gradePointAverage = g;
 		}
 
 	
@@ -93,13 +93,13 @@ public class Student
 		{
 		this.periodThreeGrade = periodThreeGrade;
 		}
-	public Double getGpa()
+	public Double getGradePointAverage()
 		{
-		return gpa;
+		return gradePointAverage;
 		}
-	public void setGpa(Double gpa)
+	public void setGradePointAverage(Double gradePointAverage)
 		{
-		this.gpa = gpa;
+		this.gradePointAverage = gradePointAverage;
 		}
 	
 	
