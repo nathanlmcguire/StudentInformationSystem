@@ -65,11 +65,11 @@ public class MainMenu
 		}
 		public static void Printsorter()
 			{
-			studentNumber = 1;
+			GradeAndScheduleChanger.studentNumber = 1;
 			for(Student s : Submenus.roster)
 				{
-				System.out.println("ID:" + studentNumber + ": " + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
-				studentNumber++;
+				System.out.println("ID:" + GradeAndScheduleChanger.studentNumber + ": " + s.getFirstName() + " " + s.getLastName() + ">>> " + s.getPeriodOne() + ": " + s.getPeriodOneGrade() + "| " + s.getPeriodTwo() + ": " + s.getPeriodTwoGrade() + "| " + s.getPeriodThree() + ": " + s.getPeriodThreeGrade() + "|");			
+				GradeAndScheduleChanger.studentNumber++;
 			}
 		}
 		}
