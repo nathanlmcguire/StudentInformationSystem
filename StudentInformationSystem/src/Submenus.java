@@ -113,7 +113,7 @@ public class Submenus
 	public static void deleteStudent() throws FileNotFoundException
 		{
 		
-		studentNumber = 0;
+		studentNumber = 1;
 		for(Student s : Submenus.roster)
 			{
 			System.out.println("ID:  " + studentNumber + ":  " + s.getFirstName() + "   " + s.getLastName() + "   " + s.getPeriodOne() + ":  " + s.getPeriodOneGrade() + "  |  " + s.getPeriodTwo() + ":  " + s.getPeriodTwoGrade() + "  |  " + s.getPeriodThree() + ":  " + s.getPeriodThreeGrade() + "  |");			
