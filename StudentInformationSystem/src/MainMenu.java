@@ -11,7 +11,6 @@ public class MainMenu
 		while(true)
 			{
 		Firstquestion();
-		Printsorter();
 			}
 		}
 

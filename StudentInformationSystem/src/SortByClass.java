@@ -6,5 +6,4 @@ public class SortByClass implements Comparator<Student>
 		{
 		return s1.getPeriodOne().compareTo(s2.getPeriodOne());
 		}
-
 		}
